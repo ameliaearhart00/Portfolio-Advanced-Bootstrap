@@ -219,8 +219,9 @@ a:active {
 }
 
 .jumbotron-text .btn-text {
-  animation: shake 0.2s linear 9;
+  animation: shake 1s;
   animation-delay: 1s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes shake {
@@ -356,6 +357,13 @@ a:active {
 /* Contact/About*/
 /* ****************************** */
 
+/* Email Me Button Animation */
+.rubberBand {
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+/* Jumbotron Content */
 .jumbotron-about {
   height: 500px;
   padding: 30px;
