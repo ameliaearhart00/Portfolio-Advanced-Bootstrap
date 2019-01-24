@@ -53,3 +53,16 @@ $("body").scrollspy({ target: "#navbar-scroll" });
     75
   );
 })();
+
+// Arrow Animation
+$(document).ready(function() {
+  $("#down-page-arrow").hide();
+
+  $("#down-page-arrow")
+    .delay(1500)
+    .fadeIn(1000);
+});
+
+$("#down-page-arrow").click(function() {
+  $("body").animate({ scrollTop: $("#sign-in-wrap").offset().top }, "slow");
+});
