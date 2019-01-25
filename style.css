@@ -133,9 +133,9 @@ a {
 /* Page Container */
 /* ****************************** */
 
-.container {
+/* .container {
   margin-top: 10px;
-}
+} */
 
 body {
   position: relative;
@@ -150,7 +150,7 @@ body {
 }
 
 nav {
-  background-color: lightpink;
+  background-color: #fff9a9;
 }
 
 nav a {
@@ -186,29 +186,94 @@ a:active {
 /* Page Hero/Jumbotron */
 /* ****************************** */
 
+@keyframes float {
+  0% {
+    /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+    transform: translatey(0px);
+  }
+  50% {
+    /* box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2); */
+    transform: translatey(-20px);
+  }
+  100% {
+    /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+    transform: translatey(0px);
+  }
+}
+
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 1px;
+  perspective: 1px;
+  font-size: 200%;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1px 0;
+  height: 400px;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.parallax__layer--back {
+  -webkit-transform: translateZ(-1px);
+  transform: translateZ(-1px);
+}
+
+/* demo styles
+--------------------------------------------- */
+
+.parallax_object {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Jumbotron */
 .jumbotron {
-  background-color: yellow;
+  background: #fff9a9;
   height: 800px;
   margin-top: 0px;
   padding: 30px;
   text-align: center;
 }
 .jumbotron-padding {
-  background-color: white;
   height: 500px;
   margin: 100px;
   padding: 30px;
+  float: ;
 }
 
 .jumbotron-h1 {
   font-size: 54px;
+  color: #FB978C;
   padding-top: 30px;
   text-align: center;
+  overflow: hidden;
+  /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
 }
 
 .jumbotron-text {
   padding: 15px;
   text-align: center;
+  overflow: hidden;
+  /* box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6); */
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
 }
 
 .social-icons i {
@@ -216,6 +281,14 @@ a:active {
   color: black;
   padding: 10px;
   text-align: center;
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.my-2 {
+  width: 50%;
+  translatey(0px);
+  animation: float 6s ease-in-out infinite;
 }
 
 .jumbotron-text .btn-text {
@@ -232,6 +305,43 @@ a:active {
     transform: translate(-20px);
   }
 }
+
+
+/* Page Arrow */
+/* #down-page-arrow {
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 70px;
+}
+
+.fa-arrow-down {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  margin-left: -5px;
+  color: red;
+  -webkit-animation: bounce 2s infinite ease-in-out;
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  60%,
+  100% {
+    -webkit-transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+  }
+  80% {
+    -webkit-transform: translateY(-5px);
+  }
+} */
+
+
 
 /* Jumbotron text becomes smaller for mobile and tablet screens */
 
@@ -358,9 +468,16 @@ a:active {
 /* ****************************** */
 
 /* Email Me Button Animation */
-.rubberBand {
+/* .rubberBand {
   animation-duration: 3s;
   animation-iteration-count: infinite;
+} */
+
+/* flip in Y elements */
+.flipInY {
+  animation-duration: 15s;
+  animation-delay: 0.5s;
+  /* animation-iteration-count: infinite; */
 }
 
 /* Jumbotron Content */
@@ -494,39 +611,7 @@ a:active {
   }
 }
 
-/* Page Arrow */
-#down-page-arrow {
-  position: absolute;
-  bottom: 0;
-  z-index: 3;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-  height: 70px;
-}
 
-.fa-arrow-down {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  margin-left: -5px;
-  color: red;
-  -webkit-animation: bounce 2s infinite ease-in-out;
-}
-
-@-webkit-keyframes bounce {
-  0%,
-  20%,
-  60%,
-  100% {
-    -webkit-transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-10px);
-  }
-  80% {
-    -webkit-transform: translateY(-5px);
-  }
-}
 
 /* ****************************** */
 /* Footer */
